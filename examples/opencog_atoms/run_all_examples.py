@@ -44,6 +44,9 @@ def main():
     
     examples = [
         ("01_basic_agent_atoms.py", "Basic agent atom types and relationships"),
+        ("02_multiagent_atoms.py", "Multi-agent coordination and communication"),
+        ("03_agent_state_atoms.py", "Agent state and lifecycle management"),
+        ("04_agent_capabilities.py", "Agent capabilities and tool management"),
         ("05_self_referential_atoms.py", "Self-referential and meta-cognitive atoms"),
         ("06_complex_agent_atoms.py", "Complex multi-agent patterns and hierarchies"),
     ]
