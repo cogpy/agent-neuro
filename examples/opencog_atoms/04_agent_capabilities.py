@@ -192,13 +192,19 @@ def example_agent_capabilities():
         # Assign capabilities
         print(f"  Capabilities:")
         for cap_name in caps:
-            # Find or create the capability/tool
-            matches = atomspace.pattern_match({"type": "*", "name": cap_name})
-            if matches:
-                cap_node = matches[0]
+            # Find capability or tool - try PredicateNode first, then ConceptNode
+            cap_node = None
+            pred_matches = atomspace.pattern_match({"type": "PredicateNode", "name": cap_name})
+            if pred_matches:
+                cap_node = pred_matches[0]
             else:
-                cap_node = atomspace.add_node("PredicateNode", cap_name,
-                                             truth_value=(0.8, 0.8))
+                concept_matches = atomspace.pattern_match({"type": "ConceptNode", "name": cap_name})
+                if concept_matches:
+                    cap_node = concept_matches[0]
+                else:
+                    # Create as PredicateNode if not found
+                    cap_node = atomspace.add_node("PredicateNode", cap_name,
+                                                 truth_value=(0.8, 0.8))
             
             # Create capability link
             has_cap_pred = atomspace.add_node(
