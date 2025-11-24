@@ -46,6 +46,99 @@ Covers fundamental atom types for agent representation:
 
 ---
 
+### 2️⃣ Multi-Agent Coordination (`02_multiagent_atoms.py`)
+**Complexity:** ⭐⭐ Intermediate  
+**Duration:** ~35 seconds  
+**Lines:** 460
+
+Demonstrates multi-agent coordination patterns:
+- **SupervisionLink**: Hierarchical supervision relationships
+- **DelegationLink**: Task delegation from supervisors to workers
+- **Communication Channels**: Message passing between agents
+- **Shared Knowledge**: Collaborative knowledge bases
+- **Coordination Mechanisms**: Sequential dependencies and synchronization
+
+**Key Concepts:**
+- Agent hierarchies and supervision
+- Inter-agent communication
+- Task delegation patterns
+- Knowledge sharing
+- Collaborative problem-solving
+
+**Output Highlights:**
+- Creates 1 supervisor + 3 worker agents
+- Establishes communication channels
+- Delegates 3 tasks
+- Manages shared knowledge base
+- Creates collaboration groups
+- Exports 57+ atoms
+
+---
+
+### 3️⃣ Agent State and Lifecycle (`03_agent_state_atoms.py`)
+**Complexity:** ⭐⭐⭐ Intermediate-Advanced  
+**Duration:** ~40 seconds  
+**Lines:** 502
+
+Covers agent state and lifecycle management:
+- **Lifecycle States**: Initialized, active, idle, paused, error, terminated
+- **StateLink**: Current state tracking
+- **TransitionLink**: State transitions over time
+- **Resource Tracking**: CPU, memory, tokens, API calls
+- **Performance Metrics**: Completion rate, efficiency, quality scores
+- **Health Status**: Diagnostic monitoring and alerts
+
+**Key Concepts:**
+- Lifecycle state management
+- State transition tracking
+- Resource usage monitoring
+- Performance evaluation
+- Health diagnostics
+- Temporal evolution
+
+**Output Highlights:**
+- Defines 6 lifecycle states
+- Creates 3 agents with different states
+- Tracks 5 state transitions
+- Monitors 5 resource metrics
+- Evaluates 5 performance indicators
+- Manages 5 health status levels
+- Exports 96+ atoms
+
+---
+
+### 4️⃣ Agent Capabilities and Tools (`04_agent_capabilities.py`)
+**Complexity:** ⭐⭐⭐ Intermediate-Advanced  
+**Duration:** ~40 seconds  
+**Lines:** 531
+
+Demonstrates capability and tool management:
+- **Tool Definitions**: 8 available tools (code execution, browser, etc.)
+- **Base Capabilities**: 7 fundamental skills
+- **InheritanceLink**: Capability hierarchies
+- **Proficiency Levels**: Novice to expert progression
+- **Learning Events**: Dynamic skill acquisition
+- **Tool-Capability Mapping**: Which tools enable which capabilities
+
+**Key Concepts:**
+- Tool availability and registration
+- Capability inheritance hierarchies
+- Skill proficiency tracking
+- Dynamic learning progression
+- Tool-capability relationships
+- Prerequisite dependencies
+
+**Output Highlights:**
+- Defines 8 tools across 5 categories
+- Creates 7 base capabilities
+- Establishes 5 specialized capabilities
+- Creates 3 agents with different profiles
+- Tracks 5 proficiency levels
+- Shows learning progression over 4 time points
+- Exports 100+ atoms
+
+---
+
 ### 5️⃣ Self-Referential Atoms (`05_self_referential_atoms.py`)
 **Complexity:** ⭐⭐⭐⭐⭐ Advanced  
 **Duration:** ~45 seconds  
@@ -238,15 +331,18 @@ Visual reference guide with ASCII diagrams showing:
 ### For Beginners
 1. Read **README.md** - Get overview
 2. Run **01_basic_agent_atoms.py** - Learn fundamentals
-3. Study the output - Understand atom structures
-4. Read **ATOM_TYPES_REFERENCE.md** - Visual reference
+3. Run **02_multiagent_atoms.py** - Multi-agent coordination
+4. Run **03_agent_state_atoms.py** - State and lifecycle
+5. Run **04_agent_capabilities.py** - Capabilities and tools
+6. Read **ATOM_TYPES_REFERENCE.md** - Visual reference
 
 ### For Advanced Users
-1. Start with **05_self_referential_atoms.py** - See meta-cognition
-2. Study the self-referential patterns
-3. Run **06_complex_agent_atoms.py** - See complex patterns
-4. Experiment with modifications
-5. Read the source code comments
+1. Complete the beginner path first
+2. Run **05_self_referential_atoms.py** - Meta-cognition and self-awareness
+3. Run **06_complex_agent_atoms.py** - Complex multi-agent patterns
+4. Study the self-referential patterns in detail
+5. Experiment with modifications
+6. Read the source code comments
 
 ### For Integration
 1. Study how examples use the AtomSpace API
@@ -321,13 +417,22 @@ Use self-referential atoms for system-level reasoning and optimization.
 ```bash
 cd /home/runner/work/agent-zero-hck/agent-zero-hck
 
-# Basic atoms
+# Basic atoms (start here!)
 python3 examples/opencog_atoms/01_basic_agent_atoms.py
 
-# Self-referential atoms (RECOMMENDED!)
+# Multi-agent coordination
+python3 examples/opencog_atoms/02_multiagent_atoms.py
+
+# Agent state and lifecycle
+python3 examples/opencog_atoms/03_agent_state_atoms.py
+
+# Capabilities and tools
+python3 examples/opencog_atoms/04_agent_capabilities.py
+
+# Self-referential atoms (advanced!)
 python3 examples/opencog_atoms/05_self_referential_atoms.py
 
-# Complex patterns
+# Complex patterns (advanced!)
 python3 examples/opencog_atoms/06_complex_agent_atoms.py
 ```
 
@@ -337,7 +442,7 @@ python3 examples/opencog_atoms/run_all_examples.py
 ```
 
 This will:
-1. Run each example in sequence
+1. Run all 6 examples in sequence
 2. Pause between examples for review
 3. Show a summary at the end
 
@@ -382,6 +487,9 @@ custom_link = atomspace.add_link(
 | Example | Atoms Created | Node Types | Link Types | Duration |
 |---------|---------------|------------|------------|----------|
 | 01_basic | 47+ | 6 | 8 | ~30s |
+| 02_multiagent | 57+ | 6 | 8 | ~35s |
+| 03_state | 96+ | 7 | 7 | ~40s |
+| 04_capabilities | 100+ | 6 | 6 | ~40s |
 | 05_self_ref | 25+ | 8 | 7 | ~45s |
 | 06_complex | 100+ | 15 | 12 | ~40s |
 
@@ -399,11 +507,8 @@ custom_link = atomspace.add_link(
 
 ## ❓ FAQ
 
-### Q: Why are there gaps in the example numbering (01, 05, 06)?
-**A:** The numbering reflects planned future examples (02-04 for multi-agent, state, capabilities). These core examples demonstrate the most important patterns.
-
 ### Q: Which example should I run first?
-**A:** Start with `01_basic_agent_atoms.py` to learn fundamentals, then move to `05_self_referential_atoms.py` to see the really interesting self-aware structures.
+**A:** Start with `01_basic_agent_atoms.py` to learn fundamentals, then progress through `02_multiagent_atoms.py`, `03_agent_state_atoms.py`, and `04_agent_capabilities.py` before moving to the advanced examples `05_self_referential_atoms.py` and `06_complex_agent_atoms.py`.
 
 ### Q: Can I use these patterns in actual agents?
 **A:** Absolutely! These are working examples showing real patterns used by Agent Zero HCK. The self-referential patterns are automatically created by the system for every agent.
