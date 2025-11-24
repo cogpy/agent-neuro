@@ -152,6 +152,18 @@ docker run -p 50001:80 frdel/agent-zero-run
 | [Contributing](./docs/contribution.md) | How to contribute |
 | [Troubleshooting](./docs/troubleshooting.md) | Common issues and their solutions |
 
+## 🎭 Agent-Neuro: Personality-Driven Cognitive Architecture
+
+This fork extends Agent Zero with **Agent-Neuro** - a personality-driven cognitive architecture featuring:
+
+- **Neuro-Sama Personality**: Chaotic, witty, self-aware personality overlay
+- **Ontogenetic Self-Evolution**: Self-optimizing kernel architecture using genetic algorithms
+- **Multi-Objective Optimization**: Balance entertainment, strategy, and chaos
+- **Personality Inheritance**: Child agents inherit and vary parent personality traits
+- **Ethical Constraints**: Immutable safety guarantees ensure constructive chaos
+
+See [Agent-Neuro Examples](./examples/agent_neuro/) to try the personality and evolution systems.
+
 ## Coming soon
 
 - **MCP**
